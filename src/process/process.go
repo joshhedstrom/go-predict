@@ -4,7 +4,7 @@ import (
 	"strings"
 )
 
-
+// SentenceLengths takes in broken down document and returns slice of sentence lengths
 func SentenceLengths(bd [][]string) []int {
 	var l []int
 	for i := 0; i < len(bd); i++ {
@@ -13,6 +13,7 @@ func SentenceLengths(bd [][]string) []int {
 	return l
 }
 
+//Average takes slice of ints and returns average
 func Average(s []int) int {
 	var val int
 	for i := 0; i < len(s); i++ {
@@ -21,6 +22,7 @@ func Average(s []int) int {
 	return val / len(s)
 }
 
+//BreakDown takes in document and returns a slice of sentences containing a slice of words
 func BreakDown(s string,) [][]string {
 	var bd [][]string
 	var sliceA, sliceB []string
@@ -57,7 +59,7 @@ func BreakDown(s string,) [][]string {
 			// b[c] = strings.Replace(b[c], ",", "", -1)
 			b[c] = strings.Replace(b[c], "\"", "", -1)
 			b[c] = strings.Replace(b[c], "'", "", -1)
-			// b[c] = strings.Replace(b[c], ";", "", -1)
+			// b[c] = strings.Replace(b[c], ";", "", -1) 
 			// b[c] = strings.Replace(b[c], ":", "", -1)
 		}
 
